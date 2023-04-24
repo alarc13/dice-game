@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(112, 138, 216);
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dado{
+    width: 350px;
+    height: 350px;
+    border: 3px solid rgb(112, 138, 216);
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+    gap: 20px;
+    background-color:white;
+}
+.circulo{
+    border-radius: 50%;
+    background-color:  rgb(112, 138, 216);
+}
+.circulo:last-child{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+.circulo:nth-child(2), .seis .circulo:nth-child(4){
+    grid-column: 3 / 4;
+}
+.uno .circulo,.tres .circulo:nth-child(2),.cinco .circulo:nth-child(3){
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.cuatro .circulo:nth-child(3),.cinco .circulo:nth-child(4),.seis .circulo:nth-child(5){
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+a{
+    display: block;
+    font-size: 2em;
+    margin-top: 20px;
+}
+@keyframes girar{
+    0%{
+        transform: rotate(0) scale(1);
+    }
+    50%{
+        transform: rotate(720deg) scale(0.2);
+    }
+    100%{
+        transform: rotate(0) scale(1);
+    }
+}
+.girando{
+    animation: girar 0.8s;
+}
